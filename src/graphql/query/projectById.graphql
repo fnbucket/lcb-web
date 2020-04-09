@@ -1,0 +1,12 @@
+query ProjectById(
+  $id: String!
+) {
+  projectById(id: $id) {
+    id
+    name
+      organization: organizationByOrganizationId {
+        id
+        name
+      }
+  }
+}

@@ -1,0 +1,41 @@
+query LcbLookupSets{
+  inventoryTypes: allInventoryTypes(
+    orderBy: ID_ASC
+  ) {
+    nodes {
+      id
+      name
+      description
+      units
+      isSingleLotted
+    }
+  }
+  
+	conversionRules: allConversionRules {
+    nodes {
+      toInventoryTypeId
+      name
+      secondaryResultants
+      toInventoryType: inventoryTypeByToInventoryTypeId {
+        id
+        name
+        description
+        units
+        isSingleLotted
+      }
+      conversionRuleSources:conversionRuleSourcesByToInventoryTypeId {
+        nodes {
+          id
+          inventoryTypeId
+          inventoryType: inventoryTypeByInventoryTypeId {
+            id
+            name
+      description
+            units
+            isSingleLotted
+          }
+        }
+      }
+    }
+  }
+}

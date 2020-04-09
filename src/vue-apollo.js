@@ -11,7 +11,7 @@ const AUTH_TOKEN = 'apollo-token'
 
 // Http endpoint
 // const httpEndpoint = process.env.VUE_APP_GRAPHQL_HTTP || 'http://192.168.0.108/graphql'
-const httpEndpoint = process.env.VUE_APP_GRAPHQL_HTTP || `${window.location.origin}/graphql`
+const httpEndpoint = process.env.VUE_APP_GRAPHQL_HTTP || 'https://api-dot-lcb-1122.appspot.com/graphiql'//`${window.location.origin}/graphql`
 
 // Config
 const defaultOptions = {
